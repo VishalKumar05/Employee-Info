@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="3dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <RelativeLayout
+            android:id="@+id/r_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/employee_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-black"
+                tools:text="Vishal"/>
+
+            <TextView
+                android:id="@+id/employee_dept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:typeface="sans"
+                android:textStyle="bold"
+                android:layout_below="@id/employee_name"
+                tools:text="Media"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</RelativeLayout>

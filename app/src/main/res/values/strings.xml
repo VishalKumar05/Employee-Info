@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Employee Info</string>
+    <string name="action_settings">Settings</string>
+    <string name="no_info_available">No Info available</string>
+    <string name="enter_name">Enter name</string>
+    <string name="department">Department</string>
+    <string name="enter_new_name">Enter new name</string>
+    <string name="new_department">Enter new Department</string>
+</resources>
