@@ -43,6 +43,20 @@
                 android:layout_below="@id/employee_name"
                 tools:text="Media"/>
 
+            <TextView
+                android:id="@+id/employee_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:typeface="sans"
+                android:textStyle="bold"
+                tools:text="M"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="35dp"/>
+
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

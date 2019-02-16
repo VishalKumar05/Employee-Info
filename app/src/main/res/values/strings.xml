@@ -6,4 +6,6 @@
     <string name="department">Department</string>
     <string name="enter_new_name">Enter new name</string>
     <string name="new_department">Enter new Department</string>
+    <string name="gender">Gender</string>
+    <string name="new_gender">Enter new Gender</string>
 </resources>

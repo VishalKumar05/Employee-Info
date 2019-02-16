@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void deleteEmployeeInfo(int position) {
-        Log.d("Position","Deleting item pos: "+ position);
+        Log.d("Position","Deleting item from pos: "+ position);
         if(position > -1) {
             if (db != null) {
                 db.deleteEmployeeInfo(employeeInfoList.get(position));
@@ -113,12 +113,13 @@ public class MainActivity extends AppCompatActivity {
         builder.setView(view);
         final EditText edit_name = (EditText)view.findViewById(R.id.edit_name);
         final EditText edit_dept = (EditText)view.findViewById(R.id.edit_dept);
+        final EditText edit_gender = (EditText)view.findViewById(R.id.edit_gender);
         builder.setTitle("Update Details");
         builder.setCancelable(false);
         builder.setPositiveButton("UPDATE", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                updateEmployee(position,edit_name.getText().toString(),edit_dept.getText().toString());
+                updateEmployee(position,edit_name.getText().toString(),edit_dept.getText().toString(),edit_gender.getText().toString());
             }
         }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
@@ -129,13 +130,14 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
-    private void updateEmployee(int position, String name, String dept) {
+    private void updateEmployee(int position, String name, String dept,String gender) {
         EmployeeModel model;
         if (position > -1){
-            if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dept)) {
+            if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dept) && !TextUtils.isEmpty(gender)) {
                 model = employeeInfoList.get(position);
                 model.setEmp_name(name);
                 model.setEmp_dept(dept);
+                model.setEmp_gender(gender);
                 if (model != null) {
                     int id = db.updateEmployeeInfo(model);
                     if (id < 0) {
@@ -170,12 +172,13 @@ public class MainActivity extends AppCompatActivity {
         builder.setView(view);
         final EditText enter_name = (EditText)view.findViewById(R.id.new_name);
         final EditText enter_dept = (EditText)view.findViewById(R.id.new_dept);
+        final EditText enter_gender = (EditText)view.findViewById(R.id.new_gender);
         builder.setTitle("Enter Details");
         builder.setCancelable(false);
         builder.setPositiveButton("ADD", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i) {
-                addEmployee(enter_name.getText().toString(),enter_dept.getText().toString());
+                addEmployee(enter_name.getText().toString(),enter_dept.getText().toString(),enter_gender.getText().toString());
             }
         }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
@@ -186,10 +189,10 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
-    private void addEmployee(String name, String department) {
+    private void addEmployee(String name, String department,String gender) {
         long id = -1;
-        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(department)) {
-            id = db.insertInfo(name, department);
+        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(department) && !TextUtils.isEmpty(gender)) {
+            id = db.insertInfo(name, department,gender);
             if (id == -1) {
                 toast = Toast.makeText(this, "Data not inserted", Toast.LENGTH_SHORT);
                 toast.show();

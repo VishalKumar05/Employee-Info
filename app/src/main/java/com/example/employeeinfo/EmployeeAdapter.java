@@ -24,8 +24,8 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-       View v =  LayoutInflater.from(parent.getContext()).inflate(R.layout.info_list,parent,false);
-       return new ViewHolder(v);
+        View v =  LayoutInflater.from(parent.getContext()).inflate(R.layout.info_list,parent,false);
+        return new ViewHolder(v);
     }
 
     @Override
@@ -33,6 +33,7 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHo
         EmployeeModel model = employeeList.get(i);
         viewHolder.name.setText(model.getEmp_name());
         viewHolder.department.setText(model.getEmp_dept());
+        viewHolder.gender.setText(model.getEmp_gender());
     }
 
     @Override
@@ -42,12 +43,13 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView name,department;
+        TextView name,department,gender;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = (TextView)itemView.findViewById(R.id.employee_name);
             department = (TextView)itemView.findViewById(R.id.employee_dept);
+            gender = (TextView)itemView.findViewById(R.id.employee_gender);
         }
 
     }
