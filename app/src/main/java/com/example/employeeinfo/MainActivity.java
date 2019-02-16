@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }else {
-                Toast.makeText(this, "Please enter valid data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter valid information", Toast.LENGTH_SHORT).show();
             }
         }
 
